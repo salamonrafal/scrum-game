@@ -1,5 +1,5 @@
 {
-  "name": "nest-typescript-starter",
+  "name": "scrum-game-app",
   "private": true,
   "version": "1.0.0",
   "description": "Nest TypeScript starter repository",
@@ -70,6 +70,6 @@
   "docker": {
     "ports": ["3000","3000"],
     "volume": ["./logs"],
-    "containerName": "nestjs-example"
+    "containerName": "scrum-game"
   }
 }
