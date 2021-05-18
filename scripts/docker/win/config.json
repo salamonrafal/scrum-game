@@ -1,0 +1,56 @@
+{
+  "actions": {
+    "help_message": {
+      "script": "Get-Action-Help-Message",
+      "args": []
+    },
+    "build":  {
+      "script": "New-Docker-Image -arg_env {arg_env}",
+      "args": [
+        "arg_env"
+      ]
+    },
+    "create_container": {
+      "script": "New-Docker-Container -arg_env {arg_env}",
+      "args": [
+        "arg_env"
+      ]
+    },
+    "ports": {
+      "script": "Get-Application-Port",
+      "args": []
+    },
+    "delete_container": {
+      "script": "Delete-Docker-Container -arg_env {arg_env}",
+      "args": [
+        "arg_env"
+      ]
+    },
+    "delete_image": {
+      "script": "Delete-Docker-Image -arg_env {arg_env}",
+      "args": [
+        "arg_env"
+      ]
+    },
+    "ssh": {
+      "script": "Run-Command-Docker-Container -arg_env {arg_env} -arg_command \"{command}\"",
+      "args": [
+        "arg_env",
+        "command"
+      ]
+    },
+    "start": {
+      "script": "Start-Docker-Container -arg_env {arg_env}",
+      "args": [
+        "arg_env"
+      ]
+    },
+    "stop": {
+      "script": "Stop-Docker-Container -arg_env {arg_env}",
+      "args": [
+        "arg_env"
+      ]
+    }
+  },
+  "defaultAction": "help_message"
+}
