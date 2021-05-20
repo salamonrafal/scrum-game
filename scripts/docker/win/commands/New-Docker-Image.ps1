@@ -28,7 +28,7 @@ Author: Rafal Salamon <rasa@salamonrafal.pl>
         $cmd_local_dockerfile = $envs[$env]
     }
 
-    $cmd = "docker build -t $image_name -f Dockerfile$cmd_local_dockerfile ."
+    $cmd = "docker build -t $image_name -f Dockerfile$cmd_local_dockerfile ." + ' >$null 2>&1'
 
     Write-Verbose -Message "Run command: $cmd"
     Invoke-Expression $cmd
