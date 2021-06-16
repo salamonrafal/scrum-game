@@ -21,18 +21,20 @@ Author: Rafal Salamon <rasa@salamonrafal.pl>
     $ports = Get-Application-Ports
     $image_name = Set-Image-Name -arg_env $arg_env
     $container_name = Get-Container-Name -arg_env $arg_env
-    $cmdTemplate = "docker container create -p {ports} --name {name} {image}"
+    $cmdTemplate = 'docker run -dit -p {ports} --name {name} -v {currentlocation}:/service {image} >$null 2>&1'
 
     $cmd = Join-Command-Action-Parameter `
         -arg_cmd_template $cmdTemplate `
         -arg_params_name `
             "ports",`
             "image",`
-            "name" `
+            "name",`
+            "currentlocation" `
         -arg_param_value `
             "$($ports.host):$($ports.container)",`
             $image_name, `
-            $container_name
+            $container_name, `
+            $current_location
 
     Write-Verbose -Message "Run command: $cmd"
     Invoke-Expression $cmd

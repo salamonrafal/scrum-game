@@ -22,7 +22,7 @@ Author: Rafal Salamon <rasa@salamonrafal.pl>
     $ports = Get-Application-Ports
     $image_name = Set-Image-Name -arg_env $arg_env
     $container_name = Get-Container-Name -arg_env $arg_env
-    $cmdTemplate = "docker exec -it -d {name} {command}"
+    $cmdTemplate = 'docker exec -it -d {name} {command}  >$null 2>&1'
 
     $cmd = Join-Command-Action-Parameter `
         -arg_cmd_template $cmdTemplate `

@@ -20,7 +20,7 @@ Author: Rafal Salamon <rasa@salamonrafal.pl>
 
     $ports = Get-Application-Ports
     $image_name = Set-Image-Name -arg_env $arg_env
-    $cmdTemplate = "docker image rm {image}"
+    $cmdTemplate = 'docker image rm {image} >$null 2>&1'
 
     $cmd = Join-Command-Action-Parameter `
         -arg_cmd_template $cmdTemplate `
